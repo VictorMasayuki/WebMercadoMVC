@@ -1,0 +1,37 @@
+﻿@model WebMercadoMVC.Models.Oferta
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Detalhes da Oferta</h1>
+
+<div>  
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.produto)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.produto.nome)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.oferta)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.oferta)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.dataoferta)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.dataoferta)
+        </dd>
+    </dl>
+</div>
+
+<div>
+    <a input type="submit" class="btn btn-primary btn-info" asp-action="Edit" asp-route-id="@Model?.id">Editar</a> |
+    <a input type="submit" class="btn btn-danger" asp-action="Index">Voltar</a>
+</div>
