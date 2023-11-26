@@ -24,5 +24,6 @@ namespace WebMercadoMVC.Models
         [Display(Name = "Quantidade Requisitada:")]
         public int quantidaderequisitada { get; set; }
 
+
     }
 }
