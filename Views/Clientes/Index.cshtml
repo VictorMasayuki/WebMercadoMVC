@@ -5,11 +5,26 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Index</h1>
+<h1>Tabela de Clientes</h1>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a input type="submit" class="btn btn-success" asp-action="Create">Adicionar um novo Cliente</a>
 </p>
+<p>
+    <a asp-controller="Query" asp-action="Pesquisa" class="btn btn-secondary">Filtrar Clientes</a>
+</p>
+
+<script>
+    function filtrar() {
+        var tipoSelecionado = document.getElementById('Tipo').value;
+        var busca = document.getElementById('busca').value;
+
+        if (tipoSelecionado === 'nome') {
+            window.location.href = '/Query/Clientes?nome=' + busca; // Redireciona para a action Clientes do QueryController com o parâmetro nome
+        }
+    }
+</script>
+
 <table class="table">
     <thead>
         <tr>
@@ -23,20 +38,21 @@
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.nome)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.email)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.id">Delete</a>
-            </td>
-        </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.nome)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.email)
+                </td>
+                <td>
+                    <a input type="submit" class="btn btn-primary" asp-action="Edit" asp-route-id="@item.id">Editar</a> |
+                    <a input type="submit" class="btn btn-info" asp-action="Details" asp-route-id="@item.id">Detalhes</a> |
+                    <a input type="submit" class="btn btn-danger" asp-action="Delete" asp-route-id="@item.id">Remover</a>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>

@@ -5,11 +5,8 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Produtos</h1>
+<h1>Geração de dados automático para Clientes</h1>
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
 <table class="table">
     <thead>
         <tr>
@@ -36,11 +33,6 @@
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.qtde)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.id">Delete</a>
             </td>
         </tr>
 }

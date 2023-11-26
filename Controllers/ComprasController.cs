@@ -67,7 +67,10 @@ namespace WebMercadoMVC.Controllers
                 produto.qtde -= compra.quantidaderequisitada;
 
                 // Multiplicar o preço pelo número de unidades compradas
-                produto.preco *= compra.quantidaderequisitada;
+
+                float precomult = produto.preco * compra.quantidaderequisitada;
+
+                produto.preco = precomult;
 
                 _context.Update(produto);
                 _context.Add(compra);

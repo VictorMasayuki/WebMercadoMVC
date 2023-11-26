@@ -10,7 +10,7 @@
 </head>
 <body class="bg-opacity-100 bg-warning">
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-info border-bottom box-shadow mb-3">
             <div class="container-fluid">
                 <a class="navbar-brand text-dark" asp-area="" asp-controller="Home" asp-action="Index">WebMercadoMVC</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
@@ -21,17 +21,16 @@
                     <ul class="navbar-nav flex-grow-1">
 
                         <li class="nav-item">
-                            <a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="Index">Início</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Início</a>
                         </li>
 
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle text-light" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <a class="nav-link dropdown-toggle text-dark" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 Opções
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <li><a class="nav-link text-dark" asp-area="" asp-controller="Clientes" asp-action="Index">Cliente</a></li>
                                 <li><a class="nav-link text-dark" asp-area="" asp-controller="Produtos" asp-action="Index">Produto</a></li>
-                                <li><a class="nav-link text-dark" asp-area="" asp-controller="Ofertas" asp-action="Index">Oferta</a></li>
                                 <li><a class="nav-link text-dark" asp-area="" asp-controller="Compras" asp-action="Index">Compra</a></li>
                                 <li><a class="nav-link text-dark" href="/Query/Pesquisa">Filtro por Nome (Cliente)</a></li>
                                 <li><a class="nav-link text-dark" href="/Query/PesquisaProd">Filtro por Nome (Produto)</a></li>
@@ -41,7 +40,7 @@
                         </li>
 
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle text-light" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <a class="nav-link dropdown-toggle text-dark" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 Geração de Dados
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -64,8 +63,8 @@
         </main>
     </div>
 
-    <footer class="bg-white border-top footer text-muted">
-        <div class="container text-dark">
+    <footer class="bg-dark border-top footer text-muted">
+        <div class="container text-white">
             &copy; Victor Masayuki Higuchi e Thiago de Carvalho Ferreira - 2023  <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
         </div>
     </footer>
