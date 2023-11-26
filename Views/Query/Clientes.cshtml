@@ -5,23 +5,23 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Tabela de Clientes Filtrado</h1>
-
 <div class="row">
+<h1 >Tabela de Clientes Filtrado</h1>
     <div class="col-md-4">
         <form asp-action="Clientes">
             <div class="form-group">
                 <label class="form-label">Filtrar Clientes</label>
                 <input type="text" class="form-control" name="filtro" />
                 <br />
-                <input type="submit" value="Filtrar" class="btn btn-success" /> |
+                <input type="submit" value="Filtrar" class="btn btn-info" /> |
                 <a input type="submit" class="btn btn-danger" href="/Clientes">Voltar a Tabela Original</a>
             </div>
         </form>
     </div>
 </div>
 
-<table class="table">
+<br />
+<table class="table bg-white">
     <thead>
         <tr>
             <th>
