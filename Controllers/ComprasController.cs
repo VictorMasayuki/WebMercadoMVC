@@ -62,9 +62,20 @@ namespace WebMercadoMVC.Controllers
         {
             if (ModelState.IsValid)
             {
+                Produto produto = await _context.Produtos.FindAsync(compra.produtoid);
+                // Reduzir a quantidade do produto com base na compra
+                produto.qtde -= compra.quantidaderequisitada;
+
+                // Multiplicar o preço pelo número de unidades compradas
+                produto.preco *= compra.quantidaderequisitada;
+
+                _context.Update(produto);
                 _context.Add(compra);
+
                 await _context.SaveChangesAsync();
+
                 return RedirectToAction(nameof(Index));
+
             }
             ViewData["clienteid"] = new SelectList(_context.Clientes, "id", "email", compra.clienteid);
             ViewData["produtoid"] = new SelectList(_context.Produtos, "id", "nome", compra.produtoid);
