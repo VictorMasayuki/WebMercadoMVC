@@ -5,44 +5,51 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Produtos</h1>
+<h1>Tabela de Produtos Filtrado</h1>
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Produtos">
+            <div class="form-group">
+                <label class="form-label">Filtrar Produtos</label>
+                <input type="text" class="form-control" name="filtro" />
+                <br />
+                <input type="submit" value="Filtrar" class="btn btn-success" /> |
+                <a input type="submit" class="btn btn-danger" href="/Produtos">Voltar a Tabela Original</a>
+            </div>
+        </form>
+    </div>
+</div>
+
 <table class="table">
     <thead>
         <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.qtde)
-            </th>
             <th>
                 @Html.DisplayNameFor(model => model.nome)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.preco)
             </th>
+            <th>
+                @Html.DisplayNameFor(model => model.qtde)
+            </th>
             <th></th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.qtde)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.nome)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.preco)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.id">Delete</a>
-            </td>
-        </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.nome)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.preco)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.qtde)
+                </td>
+            </tr>
+        }
     </tbody>
 </table>
