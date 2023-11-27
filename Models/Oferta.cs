@@ -15,8 +15,9 @@ namespace WebMercadoMVC.Models
         [Display(Name = "Produto:")]
         public Produto produto { get; set; }
 
-        [Required(ErrorMessage = "campo data é obrigatório")]
-        [Display(Name = "Oferta:")]
+        [Required(ErrorMessage = "Campo Obrigatório")]
+        [DisplayFormat(DataFormatString = "{0:C2}")]
+        [Display(Name = "Preço:")]
         public float oferta { get; set; }
 
         [Required(ErrorMessage = "campo data é obrigatório")]
